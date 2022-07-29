@@ -1,11 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import {ICryptoInfoCard} from './CryptoInfoScreen.Interface';
+import {ICryptoInfoCard} from '../CryptoInfoScreen.Interface';
 
-const CryptoInfoCard = ({name, price}: ICryptoInfoCard) => {
+const CryptoInfoCard = ({
+  name,
+  price,
+  handleOnPressNavigate,
+}: ICryptoInfoCard) => {
   return (
     <View style={styles.coinCard}>
-      <Text style={styles.coinName}>{name}</Text>
+      <TouchableOpacity onPress={handleOnPressNavigate}>
+        <Text style={styles.coinName}>{name}</Text>
+      </TouchableOpacity>
       <Text>{price}</Text>
     </View>
   );

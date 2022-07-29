@@ -5,9 +5,10 @@ import {
   useAppDispatch,
   useAppSelector,
 } from '../../../hooks/reduxHooks/reduxHooks';
-import CryptoInfoCard from './CryptoInfoCard';
 
-const CryptoInfoScreen = () => {
+import {CryptoInfoList} from './CryptoInfoList/CryptoInfoList';
+
+const CryptoInfoScreen = ({navigation}: any) => {
   const dispatch = useAppDispatch();
   const coins = useAppSelector(state => state.coins.coins);
   console.log(coins);
@@ -28,12 +29,7 @@ const CryptoInfoScreen = () => {
       <TextInput />
       <Text style={styles.sectionTitle}>CryptoInfoScreen</Text>
 
-      <FlatList
-        data={coins}
-        renderItem={({item}) => (
-          <CryptoInfoCard name={item.name} price={item.current_price} />
-        )}
-      />
+      <CryptoInfoList navigation={navigation} />
     </View>
   );
 };
