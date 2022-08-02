@@ -34,7 +34,9 @@ const CryptoInfoList = ({navigation}: any) => {
       data={coins}
       renderItem={({item}) => (
         <CryptoInfoCard
+          key={item.id}
           name={item.name}
+          image={item.image}
           price={item.current_price}
           handleOnPressNavigate={() => handleOnPressCard(item.name)}
         />

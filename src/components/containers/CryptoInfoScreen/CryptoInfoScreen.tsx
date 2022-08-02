@@ -1,4 +1,4 @@
-import {View, Text, TextInput, StyleSheet, FlatList} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import React, {useCallback, useEffect} from 'react';
 import {fetchCoins} from '../../../redux/slices/cryptoSlice';
 import {
@@ -26,31 +26,9 @@ const CryptoInfoScreen = ({navigation}: any) => {
 
   return (
     <View>
-      <TextInput />
-      <Text style={styles.sectionTitle}>CryptoInfoScreen</Text>
-
       <CryptoInfoList navigation={navigation} />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: '#000000',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 export {CryptoInfoScreen};
